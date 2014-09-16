@@ -15,4 +15,10 @@ business=parse_json('business.json')
 [len(checkins[x]) for x in range(len(checkins))]/len(checkins)
 [len(business[x]) for x in range(len(business))]/len(business)
 
+stars=[users[x]['average_stars'] for x in range(len(users))]
 
+pop_avg_stars=sum(stars)/len(stars)
+
+num_friends=[len(users[x]['friends']) for x in range(len(users))]
+
+pop_avg_friends=sum(num_friends)*1.0/len(num_friends)
