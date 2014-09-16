@@ -15,10 +15,20 @@ business=parse_json('business.json')
 [len(checkins[x]) for x in range(len(checkins))]/len(checkins)
 [len(business[x]) for x in range(len(business))]/len(business)
 
+# some basic exploratory analysis
 stars=[users[x]['average_stars'] for x in range(len(users))]
-
+#population average number of stars ~3.7
 pop_avg_stars=sum(stars)/len(stars)
 
 num_friends=[len(users[x]['friends']) for x in range(len(users))]
-
+#population average number of ratings ~7.56
 pop_avg_friends=sum(num_friends)*1.0/len(num_friends)
+
+num_fans=[users[x]['fans'] for x in range(len(users))]
+# population average number of fans ~1.67
+pop_avg_fans=sum(num_fans)*1.0/len(num_fans)
+
+
+
+
+
