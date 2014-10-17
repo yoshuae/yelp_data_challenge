@@ -1,7 +1,7 @@
 # compile json parsing function
 execfile('../parse_json.py')
 execfile('../parse_user.py')
-execfile('')
+execfile('../network_troll.py')
 # data is loaded in pwd
 users=parse_user('user.json')
 tips=parse_json('tip.json')
@@ -30,14 +30,22 @@ num_fans=[users[x]['fans'] for x in range(len(users))]
 pop_avg_fans=sum(num_fans)*1.0/len(num_fans)
 
 # reach of each user
-reach=
+reach=find_reach(users)
+
 # build pandas df of user info pass to csv for analysis with R
 import pandas as pd
+users=parse_json('user.json') # reinitialize so we can access by number key rather than user_id
 user_name=[users[x]['name'] for x in range(len(users))]
 df=pd.DataFrame(data=user_name)
 df['avg_stars']=[users[x]['average_stars'] for x in range(len(users)) ]
 df['review_count']=[users[x]['review_count'] for x in range(len(users)) ]
-
+df['user_reach']=[reach[reach.keys()[x]] for x in range(len(reach))]  #number of friends + their friends 
+df['yelping_since']=[users[x]['yelping_since'] for x in range(len(users)) ]
+df['num_friends']=[len(users[x]['friends']) for x in range(len(users))] # just number of immediate friends
+df['fans']=[users[x]['review_count'] for x in range(len(users))]
+df['funny_votes']=[users[x]['votes']['funny'] for x in range(len(users))]
+df['useful_votes']=[users[x]['votes']['useful'] for x in range(len(users))]
+df['cool_votes']=[users[x]['votes']['cool'] for x in range(len(users))]
 
 
 
