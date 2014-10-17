@@ -1,6 +1,6 @@
 # for each user count the number of users within two degrees of seperation
 # i.e. the extent of your friends + 'friends of friends' 
-# users jdata object
+# users jdata object (must use object form parse_user.py)
 # takes a long time to run, still thinking about faster graph algorithms/python data structures
 
 def find_reach(jdata_user):
