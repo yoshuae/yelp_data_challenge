@@ -1,6 +1,7 @@
 # compile json parsing function
 execfile('../parse_json.py')
 execfile('../parse_user.py')
+execfile('')
 # data is loaded in pwd
 users=parse_user('user.json')
 tips=parse_json('tip.json')
@@ -27,6 +28,27 @@ pop_avg_friends=sum(num_friends)*1.0/len(num_friends)
 num_fans=[users[x]['fans'] for x in range(len(users))]
 # population average number of fans ~1.67
 pop_avg_fans=sum(num_fans)*1.0/len(num_fans)
+
+# reach of each user
+reach=
+# build pandas df of user info pass to csv for analysis with R
+import pandas as pd
+user_name=[users[x]['name'] for x in range(len(users))]
+df=pd.DataFrame(data=user_name)
+df['avg_stars']=[users[x]['average_stars'] for x in range(len(users)) ]
+df['review_count']=[users[x]['review_count'] for x in range(len(users)) ]
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

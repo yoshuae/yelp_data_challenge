@@ -4,17 +4,13 @@
 # examples jdata[200]['fans'] or jdata[300].keys()
 
 def parse_user(file):
-
 	import json
-
 	file=open(file)
 	jdata={}
 	i=0
-
 	for line in file:
 		temp=json.loads(line)
 		jdata[temp['user_id']]={}
 		jdata[temp['user_id']]=temp
 		i+=1
-	
 	return(jdata)
