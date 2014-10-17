@@ -1,8 +1,8 @@
 # compile json parsing function
 execfile('../parse_json.py')
-
+execfile('../parse_user.py')
 # data is loaded in pwd
-users=parse_json('user.json')
+users=parse_user('user.json')
 tips=parse_json('tip.json')
 reviews=parse_json('review.json')
 checkins=parse_json('checkin.json')
