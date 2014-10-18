@@ -3,16 +3,19 @@
 # users jdata object (must use object form parse_user.py)
 # takes a long time to run, still thinking about faster graph algorithms/python data structures
 
-def find_reach(jdata_user):
+def find_reach(jdata_user,var=0):
 	reach={}
+	counts=[]
 # for each users friends , build a list of the friends of friends, unroll it, and count distinct using the python set operator. 	
 	for user in jdata_user.keys():
 		temp=[jdata_user[x]['friends'] for x in jdata_user[user]['friends']]
 		temp.extend(jdata_user[user]['friends'])
 		temp2=[item for sublist in temp for item in sublist]
 		reach[user]=len(set(temp2))
+		counts.append(len(set(temp2)))
 # return dict with key=users and value=number of second degree connections
-	return(reach)
+	if var==1: return(counts)
+	else: return(reach)
 
 
 
