@@ -47,7 +47,7 @@ df['funny_votes']=[users[x]['votes']['funny'] for x in range(len(users))]
 df['useful_votes']=[users[x]['votes']['useful'] for x in range(len(users))]
 df['cool_votes']=[users[x]['votes']['cool'] for x in range(len(users))]
 df['user_id']=[users[x]['user_id'] for x in range(len(users))]
-df['user_reach']=[reach[x] for x in df['user_id']]                       ]  #number of friends + their friends 
+df['user_reach']=[reach[x] for x in df['user_id']]    #number of friends + their friends 
 
 df=df.drop('user_id',1) # drop extra column
 
