@@ -13,3 +13,7 @@ def parse_json(file):
 		jdata[i]=json.loads(line)
 		i+=1
 	return(jdata)
+
+#import json
+#def parse_json(path):
+#    return [json.loads(line) for line in open(path)]
