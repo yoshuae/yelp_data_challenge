@@ -1,6 +1,11 @@
 # Yelp databases #
 ######################
-.json
+*.csv
+*.json
+# Pdf files and vim temporary files #
+#####################################
+*.pdf
+*.swp
 # OS generated files #
 ######################
 .DS_Store
