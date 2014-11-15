@@ -14,3 +14,6 @@ def parse_user(file):
 		jdata[temp['user_id']]=temp
 		i+=1
 	return(jdata)
+
+#def parse_user(path):
+#    return [json.loads(line)['user_id'] for line in open(path)]
